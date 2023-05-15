@@ -8,6 +8,10 @@
 - メール受信<BR>
   <img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
 
+# 事前準備
+- 自テナント内でメール受信可能なアカウントを 1 つ作成して下さい。
+  - 本ワークショップでは ``azureopenai@[テナント名].onmicrosoft.com`` としています。
+
 # 1.テンプレートの概要
 以下 ARM テンプレートを用いて、ロジックアプリを導入します。
 - Office 365 環境のメールアドレスに対して、``OpenAI question`` タイトルでメールを受信すると、リクエストを Azure OpenAI に問い合わせを行い、返信を行います。
@@ -15,10 +19,11 @@
 <img width="219" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/f4a7ec8e-84b1-4a7f-8bb4-db53ccda6b4b">
 
 # 2. テンプレートの導入
-以下より、ARM テンプレートを導入して下さい。<BR>
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fformat81%2FAzureOpenAI-LogicApp%2Fblob%2Fmain%2Fazuredeploy.json)
+以下 GitHub レポジトリの ARM テンプレートを導入して下さい。
 
-# 3. 
+https://github.com/format81/AzureOpenAI-LogicApp
+
+# 3. 設定方法
 
 # 謝辞
 Special Thanks to 
