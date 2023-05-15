@@ -40,4 +40,11 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 | https://your-resource-name.openai.azure.com | https://(自分のエンドポイント).openai.azure.com |
 | deployment-id | モデル デプロイ名 |
 
-## 3.4 
+# 4. テスト
+設定が完了しましたら、Microsoft Sentinel に対してアラートを発砲してみましょう。
+- [Microsoft Defender for Cloud のサンプルアラート ( Defender for Cloud のコネクターを事前に設定）](https://learn.microsoft.com/ja-jp/azure/defender-for-cloud/alert-validation#generate-sample-security-alerts)
+
+# 5. 確認ポイント
+  - Sentinel 分析ルールの翻訳は、どのように行われましたか？
+  - Azure OpenAI に対して、どのような prompt を送りましたか？
+  - Sentinel インシデント更新はどのように行われましたか？
