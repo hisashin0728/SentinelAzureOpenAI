@@ -48,3 +48,4 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
   - Sentinel 分析ルールの翻訳は、どのように行われましたか？
   - Azure OpenAI に対して、どのような prompt を送りましたか？
   - Sentinel インシデント更新はどのように行われましたか？
+  - Azure OpenAI に対して、パラメータ設定はありましたか？
