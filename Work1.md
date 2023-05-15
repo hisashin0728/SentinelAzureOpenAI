@@ -32,8 +32,26 @@ API 接続の編集から、「承認する」を押してメール受信する�
 
 ## 3.2 ロジックアプリ内の編集
 ### 3.2.1 Azure OpenAI API キーの登録
+本ロジックアプリでは Azure OpenAI の API キーを登録する必要があります。
+- Azure OpenAI の API キーを確認
+<img width="837" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/84b99d6d-8f4b-4b55-82e0-54e9272e93c0">
+- ロジックアプリ内に Azure OpenAI のキーを設定する
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/9382ed31-7de0-4f16-a606-55e65f03bfdf)
 
-  
-# 謝辞
-Special Thanks to 
-https://github.com/format81/AzureOpenAI-LogicApp
+### 3.2.2 ロジックアプリの RESTAPI に対して、自テナント内の情報にカスタマイズする
+展開されたロジックアプリの REST API は URL がサンプルになっています。
+自テナントに合わせた設定に更新して下さい。
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/91fa2cd9-0b50-4dbc-b87b-ceac609612a1)
+
+|  Parameter  | Sample |
+| ---- | ---- |
+| https://your-resource-name.openai.azure.com | https://(自分のエンドポイント).openai.azure.com |
+| deployment-id | モデル デプロイ名 |
+
+### 3.2.3 返信先のメールアドレスに認証する
+最後のロジックアプリのステップは返信先のメールアドレスになります。
+<img width="821" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/2023ec2e-2809-47ef-acb7-dda17c201bcc">
+
+# 4. テスト
+設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。
+<img width="299" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/5e1fdd8b-7095-4228-9775-b8a1ba4b3326">
