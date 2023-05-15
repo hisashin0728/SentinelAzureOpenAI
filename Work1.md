@@ -1,5 +1,5 @@
-# 演習. Microsoft Sentinel のインシデントから Azure OpenAI に問い合わせをかける
-Microsoft Sentinel のインシデント発生時に、Azure OpenAI に問い合わせを行い、分析ルールの日本語訳を行ってみましょう。
+# 演習. Azure OpenAI ロジックアプリを用いて、メールによる応答を実践する
+まずは Azure OpenAI の活用イメージを掴むため、Office 365 メールトリガーを用いた Azure OpenAI との入出力を試してみましょう。
 
 # 1.テンプレートの概要
 以下 ARM テンプレートを用いて、ロジックアプリを導入します。
