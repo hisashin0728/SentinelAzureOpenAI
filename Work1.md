@@ -55,6 +55,8 @@ API 接続の編集から、「承認する」を押してメール受信する�
 
 # 4. テスト
 設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。<BR>
+数分後、Azure OpenAI で返した内容が返ってきましたか？
+  - **日本語でメールを送る場合は HTML メールではなく、TEXT メールで送るようにして下さい**
 <img width="299" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/5e1fdd8b-7095-4228-9775-b8a1ba4b3326">
 
 # 5. 確認ポイント
