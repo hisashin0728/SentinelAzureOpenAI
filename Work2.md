@@ -17,5 +17,9 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 以下から、ARM テンプレートをデプロイして下さい。<BR>
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2Ftemplate.json)
 
-# 3. 設定準備
-## 3.1 Azure Open AI
+# 3. 設定
+演習 1 と同様にロジックアプリの内容を編集して下さい。
+## 3.1 aaaa
+## 3.2 bbbb
+## 3.3 cccc
+## 3.4 
