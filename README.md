@@ -16,6 +16,6 @@ Microsoft Sentinel / Azure Open AI 演習のレポジトリです。
 # 演習内容
 以下の順番で演習を実践して下さい。
 - [事前準備 Azure OpenAI サービスの作成](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/preconfiguration.md)
-- 演習1. Azure OpenAI ロジックアプリを用いて、メールによる応答を実践する
+- [演習1. Azure OpenAI ロジックアプリを用いて、メールによる応答を実践する](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work1.md)
 - [演習2. Microsoft Sentinel のインシデントトリガーを用いて、ロジックアプリを用いて Azure OpenAI に分析ルールの翻訳を実行させる](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)
 - 演習3. Microsoft Sentinel のインシデント情報から Azure OpenAI への問い合わせをカスタマイズする
