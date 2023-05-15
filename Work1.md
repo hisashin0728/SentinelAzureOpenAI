@@ -3,8 +3,10 @@
 
 # 実行イメージ
 メールアドレスに問い合わせを行うと、Azure OpenAI が回答してくれる bot サービスの作成します。<BR>
-<img width="300" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/d3dbb99a-1689-455e-98ca-6372bb3477c4"><BR>
-<img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
+- メール送信
+  <img width="300" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/d3dbb99a-1689-455e-98ca-6372bb3477c4"><BR>
+- メール受信
+  <img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
 
 # 1.テンプレートの概要
 以下 ARM テンプレートを用いて、ロジックアプリを導入します。
