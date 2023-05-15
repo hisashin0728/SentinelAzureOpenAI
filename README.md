@@ -7,7 +7,7 @@ Microsoft Sentinel / Azure Open AI 演習のレポジトリです。
 
 # 前提条件
 - Microsoft Sentinel の環境を自テナントに有すること
-- Azure OpenAI が利用可能であること (※ 2023.5.15 現在、Azure では事前申請が必要です)
+- Azure OpenAI が利用可能であること **(※ 2023.5.15 現在、Azure では事前申請が必要です)**
   -   https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu
 - Microsoft Sentinel に対して、何らかの分析ルールによるアラート発砲が可能であること
   -   本演習では Microsoft Defender for Cloud とデータコネクタを接続し、Microsoft Defender for Cloud のサンプルアラートによる効果を想定しています。
