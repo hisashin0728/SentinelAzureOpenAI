@@ -55,3 +55,8 @@ API 接続の編集から、「承認する」を押してメール受信する�
 # 4. テスト
 設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。<BR>
 <img width="299" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/5e1fdd8b-7095-4228-9775-b8a1ba4b3326">
+
+# 5. 確認ポイント
+  - ロジックアプリから Azure OpenAI へはどのような RESTAPI での通信が行われたでしょうか？
+  - ロジックアプリから Azure OpenAI にチャットする内容はどのような内容で問い合わせが行われましたか？
+  - Azure OpenAI に対して、パラメータ設定はありましたか？
