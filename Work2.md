@@ -19,7 +19,25 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 
 # 3. 設定
 演習 1 と同様にロジックアプリの内容を編集して下さい。
-## 3.1 aaaa
-## 3.2 bbbb
-## 3.3 cccc
+## 3.1 ロジックアプリ - Sentinel レスポンダーロールの付与
+ロジックアプリから Microsoft Sentinel のインシデントを更新させるため、ロジックアプリのマネージド ID に対して、「Sentinel レスポンダー」ロールの付与を行ってください。
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/0be09f07-f4de-46b9-89c8-c1710fbda62a)
+  
+## 3.2 ロジックアプリ - API キーの付与
+本ロジックアプリでは Azure OpenAI の API キーを登録する必要があります。
+- Azure OpenAI の API キーを確認
+<img width="837" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/84b99d6d-8f4b-4b55-82e0-54e9272e93c0">
+- ロジックアプリ内に Azure OpenAI のキーを設定する
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/9382ed31-7de0-4f16-a606-55e65f03bfdf)
+
+## 3.3 ロジックアプリ - RESTAPI の編集
+展開されたロジックアプリの REST API は URL がサンプルになっています。
+自テナントに合わせた設定に更新して下さい。
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/91fa2cd9-0b50-4dbc-b87b-ceac609612a1)
+
+|  Parameter  | Sample |
+| ---- | ---- |
+| https://your-resource-name.openai.azure.com | https://(自分のエンドポイント).openai.azure.com |
+| deployment-id | モデル デプロイ名 |
+
 ## 3.4 
