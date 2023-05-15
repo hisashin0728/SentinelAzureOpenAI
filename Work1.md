@@ -50,7 +50,8 @@ API 接続の編集から、「承認する」を押してメール受信する�
 
 ### 3.2.3 返信先のメールアドレスに認証する
 最後のロジックアプリのステップは返信先のメールアドレスになります。
-<img width="821" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/2023ec2e-2809-47ef-acb7-dda17c201bcc">
+メールの送信者（差出人）に対して Azure OpenAI から得られた ``text`` を返しています。  
+<img width="525" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/42c05c55-e8b3-48c6-a996-29ba8b6e9c25">
 
 # 4. テスト
 設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。<BR>
