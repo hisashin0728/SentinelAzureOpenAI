@@ -53,5 +53,5 @@ API 接続の編集から、「承認する」を押してメール受信する�
 <img width="821" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/2023ec2e-2809-47ef-acb7-dda17c201bcc">
 
 # 4. テスト
-設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。
+設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。<BR>
 <img width="299" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/5e1fdd8b-7095-4228-9775-b8a1ba4b3326">
