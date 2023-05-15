@@ -24,7 +24,16 @@
 https://github.com/format81/AzureOpenAI-LogicApp
 
 # 3. 設定方法
+展開されたロジックアプリを起動するに際して、幾つか設定が必要になります。
+## 3.1 API 認証 (Office 365 コネクタ) の設定
+ロジックアプリでは Office 365 のメールアドレスに対して API 認証が必要になります。
+API 接続の編集から、「承認する」を押してメール受信するアドレスで認証して下さい（本例では ``openai@[テナント名].onmicrosoft.com`` で認証します）
+<img width="427" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/978a67e1-ee65-4780-86d5-c53e8276923a">
 
+## 3.2 ロジックアプリ内の編集
+### 3.2.1 Azure OpenAI API キーの登録
+
+  
 # 謝辞
 Special Thanks to 
 https://github.com/format81/AzureOpenAI-LogicApp
