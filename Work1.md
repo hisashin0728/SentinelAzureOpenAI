@@ -2,7 +2,8 @@
 まずは Azure OpenAI の活用イメージを掴むため、Office 365 メールトリガーを用いた Azure OpenAI との入出力を試してみましょう。
 
 # 実行イメージ
-メールアドレスに問い合わせを行うと、Azure OpenAI が回答してくれる bot サービスの作成
+メールアドレスに問い合わせを行うと、Azure OpenAI が回答してくれる bot サービスの作成します。
+
 <img width="300" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/d3dbb99a-1689-455e-98ca-6372bb3477c4">
 <img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
 
