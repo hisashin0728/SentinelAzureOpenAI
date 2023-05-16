@@ -1,5 +1,5 @@
 # 演習. Microsoft Sentinel のインシデントから Azure OpenAI に問い合わせをかける
-Microsoft Sentinel のインシデント発生時に、Azure OpenAI に問い合わせを行い、分析ルールの日本語訳を行ってみましょう。
+Microsoft Sentinel のインシデント発生時に、Azure OpenAI に問い合わせを行い、分析ルールの日本語訳を行います。
 
 # 実行イメージ
 Sentinel のインシデントが検知すると、分析ルールの補足 (Description) を ChatGPT が翻訳するテンプレートになります。
