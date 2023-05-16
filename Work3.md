@@ -127,11 +127,12 @@ Microsoft Sentinel のオートメーション機能では、インシデント�
 他にどのようなことが出来るのでしょうか？ ロジックアプリの Microsoft Sentinel コネクターを用いると以下のような処理を実現することが出来ます。
 - インシデントブックマークの登録
 - インシデントに通知を追加する
-- インシデントにタスクを追加する
-- インシデントにコメントを追加する
+- [インシデントにタスクを追加する](https://learn.microsoft.com/ja-jp/azure/sentinel/incident-tasks)
+- [インシデントにコメントを追加する](https://learn.microsoft.com/ja-jp/azure/sentinel/investigate-incidents#considerations-for-comments)
 
 # 6. ユースケースを考える
-インシデント情報を元に、ChatGPT に問い合わせを行い、得られた情報をどのようにインシデント管理に活用出来るのかを考えてみましょう。
+- 各自アイデアを考えてみましょう。
+- インシデント情報を元に、ChatGPT に問い合わせを行い、得られた情報をどのようにインシデント管理に活用出来ますか？
 
 # Next Action
 お疲れさまでした！次の演習に移って下さい。
