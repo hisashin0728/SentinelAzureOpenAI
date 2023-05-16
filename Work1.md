@@ -3,9 +3,9 @@
 
 # 実行イメージ
 メールアドレスに問い合わせを行うと、Azure OpenAI が回答してくれる bot サービスの作成します。
-- メール送信<BR>
+- **メール送信**<BR>
   <img width="300" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/d3dbb99a-1689-455e-98ca-6372bb3477c4"><BR>
-- メール受信<BR>
+- **メール受信**<BR>
   <img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
 
 # 事前準備
