@@ -9,7 +9,13 @@ MITRE 戦術 ###[ "LateralMovement", "Execution" ]### について、100 文字�
 ```
 <img width="697" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/6e1ccaba-7d4f-4aec-8219-16e0e29a5416">
 
-## ユースケース 2 - ハンティングするための KQL を生成させる
+## ユースケース 2 - インシデントタイトルとインシデント補足から、要約をまとめさせる
+インシデント情報を ChatGPT にまとめて送り、インシデント要約をまとめさせるアイデアです。
+```
+test
+```
+
+## ユースケース 3 - ハンティングするための KQL を生成させる
 分析ルール名や補足内容、ChatGPT の一次応答を用いて、インシデントを判定するための KQL を生成させます。
 ```
 Microsoft Sentinel で脅威を調査するための KQL を提案してほしい
