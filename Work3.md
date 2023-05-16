@@ -1,8 +1,8 @@
-# 振り返り
+# 1. 振り返り
 演習 1、および演習 2 を通じて、ロジックアプリを通じて Azure OpenAI の GPT/ChatGPT に問い合わせをかけられることが理解できたと思います。
 あらためて、Azure OpenAI について振り返ってみましょう。
 
-# Azure OpenAI のモデル
+# 2. Azure OpenAI のモデル
 モデルデプロイで設定した Azure OpenAI のモデルは様々なモデルが提供されていますが、2023.5 現在 Azure OpenAI のモデルと用途は以下のような違いがあります。
 
 |  GPT model  | 概要 |
@@ -16,17 +16,17 @@ https://www.youtube.com/watch?v=tFgqdHKsOME
 
 <img width="798" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/3a47d0fb-5124-4c3d-a4cf-e2194c30db33">
 
-# 何をやっているのか
+# 3. 何をやっているのか
 このワークショップでは、ロジックアプリを用いて Azure OpenAI の GPT/ChatGPT に対して prompt による会話を行いました。
 AI を活用するに際して、期待する答えをどのように導き出すか、prompt の依頼方法が重要となります。
 <img width="739" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/dbfb73c3-ac92-44c8-b52a-42ec9bf4a9d9">
 
-# Azure OpenAI の使い方
+# 4. Azure OpenAI の使い方
 Azure OpenAI のプレイグラウンドを用いて、幾つかのモデル活用パターンを考えてみましょう。
 https://oai.azure.com/portal/playground
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/28fd2466-be5d-4b14-94f3-c31a8c348dfa)
 
-## 1. 基礎：要約 (Summarization)
+## 4.1 基礎：要約 (Summarization)
 GPT に対してコンテキストを要約依頼する例です。
 インストラクションとコンテキストは ```###``` や ```"""``` を使って分離することを覚えましょう。
 
@@ -37,7 +37,7 @@ GPT に対してコンテキストを要約依頼する例です。
 日本は先攻となりましたが、1人目の南野拓実選手と2人目の三笘選手が連続で相手のゴールキーパーにシュートを防がれました。そして日本が1対2で迎えた4人目でキャプテンの吉田麻也選手も決められず、最後はクロアチアの4人目に決められてペナルティーキック戦で1対3で敗れました。"""
 ```
 
-## 2. 基礎：質問応答 (Question-Answering)
+## 4.2 基礎：質問応答 (Question-Answering)
 コンテキストを使って業界独自の文書や企業内 FAQ など、OpenAI GPT 知らないさまざまな文書も対象にすることが出来ます。
 
 ```
@@ -50,7 +50,7 @@ GPT に対してコンテキストを要約依頼する例です。
 
 <img width="700" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/2d8cce9f-7c04-400d-b158-4e37029774d7">
 
-## 3. 基礎：分類 (Classification)
+## 4.3 基礎：分類 (Classification)
 インテント分類など、カスタムな分類にも対応出来ます。
 
 ```
@@ -60,7 +60,7 @@ GPT に対してコンテキストを要約依頼する例です。
 
 <img width="488" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a81c66de-e7e6-41fa-8a8e-4f3715f849c5">
 
-## 4. 基礎：テキスト挿入 (Insertion)
+## 4.4 基礎：テキスト挿入 (Insertion)
 プロンプトとプレフィックスプロンプトの間にテキストを挿入させる活用事例です。
 
 ```
@@ -81,3 +81,24 @@ GPT に対してコンテキストを要約依頼する例です。
 
 <img width="689" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/bbe61c7f-5c82-4bf7-8112-3484a72c1f7d">
 
+他にも、prompt の活用例は様々な手法が紹介されています。ご興味がある方は、公式サイト[プロンプト エンジニアリングの手法](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions)を参照下さい。
+
+# 5. パラメータチューニング
+今回の演習では、RESTAPI で Azure OpenAI に問い合わせを行う際に幾つかのパラメータを適用しました。
+これらのパラメータにはどのような意味が有るのか考えてみましょう。
+<img width="267" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/44ca05af-221a-4cd2-b5e7-133aa735ce0b">
+
+[Azure OpenAI Service の REST API リファレンス]
+(https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/reference)
+
+| パラメータ | 意味 |
+| ---- | ---- |
+| prompt | 文字列、文字列の一覧、またはトークン リストの一覧としてエンコードされた、入力候補の生成対象となるプロンプト。 <\|endoftext\|> はトレーニング中にモデルが確認するドキュメント区切り記号であるため、プロンプトを指定しない場合、モデルは新しいドキュメントの先頭からのように生成します。 |
+| max_tokens | 入力候補に生成するトークンの最大数。|
+| temperature | 使用するサンプリング温度 (0 から 2)。 値が大きいほど、モデルはより多くのリスクを負います。 よりクリエイティブなアプリケーションの場合は 0.9、明確に定義された回答の場合は 0 (argmax sampling) をお試しください。|
+| frequency_penalty | -2.0 から 2.0 の数値。 値を正にすると、これまでのテキストに存在する頻度に基づいて新しいトークンにペナルティが課せられ、モデルが同じ行を逐語的に繰り返す可能性が低下します。|
+
+参考 URL:
+- [OpenAI APIで設定するtemperatureは回答のランダム性を指定するもの。実験してみた](https://note.com/eurekachan/n/n68c1b346809c)
+- [ChatGPT API利用方法の簡単解説](https://qiita.com/mikito/items/b69f38c54b362c20e9e6)
+- [ChatGPT APIの各種パラメーターを指定して動作確認してみた。](https://qiita.com/kuromame1020611/items/0233be428a92d2d4e762)
