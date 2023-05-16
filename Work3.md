@@ -13,6 +13,7 @@
 
 情報元：
 https://www.youtube.com/watch?v=tFgqdHKsOME
+
 <img width="798" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/3a47d0fb-5124-4c3d-a4cf-e2194c30db33">
 
 # Azure OpenAI の使い方
