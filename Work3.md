@@ -125,13 +125,13 @@ Microsoft Sentinel のオートメーション機能では、インシデント�
 <img width="315" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/4fb3f3d7-af41-42c6-abdd-f44517375b8f">
 
 他にどのようなことが出来るのでしょうか？
-- インシデントブックマークの登録
+- インシデントブックマークの登録<BR>
 <img width="279" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/463a20a7-4c8d-4d2f-80ee-9a5df8beee4a"><BR>
-- インシデントに通知を追加する
+- インシデントに通知を追加する<BR>
 <img width="280" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/fee26ad1-f883-45ea-8bc0-049c340a52b3">
-- インシデントにタスクを追加する
+- インシデントにタスクを追加する<BR>
 <img width="279" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/06f2eb6a-588b-4044-a885-a4d4dd56e713">
-- インシデントにコメントを追加する
+- インシデントにコメントを追加する<BR>
 <img width="275" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/dddb228a-cfa2-4da9-9d8c-bf75c2b58631">
 
 # 6. ユースケースを考える
