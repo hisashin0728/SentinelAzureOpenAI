@@ -88,8 +88,7 @@ GPT に対してコンテキストを要約依頼する例です。
 これらのパラメータにはどのような意味が有るのか考えてみましょう。<BR>
 <img width="267" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/44ca05af-221a-4cd2-b5e7-133aa735ce0b">
 
-[Azure OpenAI Service の REST API リファレンス]
-(https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/reference)
+[Azure OpenAI Service の REST API リファレンス](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/reference)
 
 | パラメータ | 意味 |
 | ---- | ---- |
