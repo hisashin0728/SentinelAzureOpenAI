@@ -40,6 +40,15 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 | https://your-resource-name.openai.azure.com | https://(自分のエンドポイント).openai.azure.com |
 | deployment-id | モデル デプロイ名 |
 
+## 3.4 Sentinel - プレイブックに対して「アクセスの許可」を設定する
+展開されたロジックアプリに対して Microsoft Sentinel がアクセスできるように、「設定」よりプレイブックのアクセス許可を与えます。
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/4d86732a-8013-4430-93f5-452f154491c4)
+
+## 3.5 Sentinel - オートメーションルールでプレイブックを自動起動させる
+最後に、インシデント発生時にプレイブックが起動するようにオートメーションルールを作成します。
+もし、メール通知などのプレイブックを事前設定されている場合は、通知前に設定することで和訳された内容を通知することが出来るようになります。
+<img width="372" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/8fee8add-b8c7-4fc2-9943-9389c4d30b38">
+
 # 4. テスト
 設定が完了しましたら、Microsoft Sentinel に対してアラートを発砲してみましょう。
 - [Microsoft Defender for Cloud のサンプルアラート ( Defender for Cloud のコネクターを事前に設定）](https://learn.microsoft.com/ja-jp/azure/defender-for-cloud/alert-validation#generate-sample-security-alerts)
