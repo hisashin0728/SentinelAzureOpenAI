@@ -13,7 +13,6 @@ Microsoft Sentinel のインシデント作成をトリガーに Azure OpenAI GP
   -   https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu
 - Microsoft Sentinel に対して、何らかの分析ルールによるアラート発砲が可能であること
   -   本演習では Microsoft Defender for Cloud とデータコネクタを接続し、Microsoft Defender for Cloud のサンプルアラートによる効果を想定しています。
-  -   
 
 # 演習内容
 以下の順番で演習を実践して下さい。
@@ -22,3 +21,8 @@ Microsoft Sentinel のインシデント作成をトリガーに Azure OpenAI GP
 - [演習2. Microsoft Sentinel のインシデントトリガーを用いて、ロジックアプリを用いて Azure OpenAI に分析ルールの翻訳を実行させる](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)
 - 振り返り Azure OpenAI に対するリクエストチューニング
 - 演習3. Microsoft Sentinel のインシデント情報から Azure OpenAI への問い合わせをカスタマイズする
+
+# 免責事項
+- 本レポジトリの演習によるリソース作成によって発生するコストについては、利用するユーザー側範疇となります。
+- 本レポジトリの演習によって作成される環境から出力される内容について、作成者は責任を負わないものとします。
+- 本レポジトリは Open Source としての扱いになります。 
