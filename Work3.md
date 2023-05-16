@@ -85,7 +85,7 @@ GPT に対してコンテキストを要約依頼する例です。
 
 # 5. パラメータチューニング
 今回の演習では、RESTAPI で Azure OpenAI に問い合わせを行う際に幾つかのパラメータを適用しました。
-これらのパラメータにはどのような意味が有るのか考えてみましょう。
+これらのパラメータにはどのような意味が有るのか考えてみましょう。<BR>
 <img width="267" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/44ca05af-221a-4cd2-b5e7-133aa735ce0b">
 
 [Azure OpenAI Service の REST API リファレンス]
@@ -102,3 +102,24 @@ GPT に対してコンテキストを要約依頼する例です。
 - [OpenAI APIで設定するtemperatureは回答のランダム性を指定するもの。実験してみた](https://note.com/eurekachan/n/n68c1b346809c)
 - [ChatGPT API利用方法の簡単解説](https://qiita.com/mikito/items/b69f38c54b362c20e9e6)
 - [ChatGPT APIの各種パラメーターを指定して動作確認してみた。](https://qiita.com/kuromame1020611/items/0233be428a92d2d4e762)
+
+# 5. Microsoft Sentinel インシデント情報から何が得られるのか？
+セキュリティオペレーションセンターでは、インシデント運用を効率化するためにインシデント情報から AI を活用することを考えています。
+Microsoft Sentinel からはどのような情報を Azure OpenAI に渡せるのか考えてみましょう。
+
+| インシデント情報から得られるパラメータ | 意味 |
+| ---- | ---- |
+| インシデントのタイトル | Analytics Rule に作成する分析ルール名。 |
+| インシデントの説明 | Analytics Rule に適用されているルール詳細。 |
+| インシデントの重要度 | Analytics Rule に適用されているルール詳細。 |
+| エンティティ | Analytics Rule にて検出したエンティティ情報 (JSON 出力) |
+| インシデントの戦術 | Analytics Rule にて検出した MITRE 戦術情報 |
+
+<img width="297" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a12e03c8-123b-405b-90ee-8bb3378e5656">
+
+# 6. ユースケースを考える
+AAAA
+
+
+
+
