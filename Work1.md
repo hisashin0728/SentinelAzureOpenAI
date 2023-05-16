@@ -63,3 +63,6 @@ API 接続の編集から、「承認する」を押してメール受信する�
   - ロジックアプリから Azure OpenAI へはどのような RESTAPI での通信が行われたでしょうか？
   - ロジックアプリから Azure OpenAI にチャットする内容はどのような内容で問い合わせが行われましたか？
   - Azure OpenAI に対して、パラメータ設定はありましたか？
+
+# 6. Next Action
+  お疲れさまでした！[次の演習](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)に進んでください。
