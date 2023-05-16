@@ -116,9 +116,29 @@ Microsoft Sentinel からはどのような情報を Azure OpenAI に渡せる�
 
 <img width="297" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a12e03c8-123b-405b-90ee-8bb3378e5656">
 
-# 6. ユースケースを考える
-AAAA
+# 6. Microsoft Sentinel に対して、どのような対処が出来るのかを考える
+Microsoft Sentinel のオートメーション機能では、インシデント内容の更新を行うことで内容を上書きすることが出来るようになっています。
+本演習ではインシデント情報を以下のように更新することを実践しました。
+- タグに正規化された ``model`` 情報を付与
+- インシデント説明の内容を正規化された ``text`` 情報を付与
+  
+<img width="315" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/4fb3f3d7-af41-42c6-abdd-f44517375b8f">
 
+他にどのようなことが出来るのでしょうか？
+- インシデントブックマークの登録
+<img width="279" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/463a20a7-4c8d-4d2f-80ee-9a5df8beee4a"><BR>
+- インシデントに通知を追加する
+<img width="280" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/fee26ad1-f883-45ea-8bc0-049c340a52b3">
+- インシデントにタスクを追加する
+<img width="279" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/06f2eb6a-588b-4044-a885-a4d4dd56e713">
+- インシデントにコメントを追加する
+<img width="275" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/dddb228a-cfa2-4da9-9d8c-bf75c2b58631">
+
+# 6. ユースケースを考える
+インシデント情報を元に、ChatGPT に問い合わせを行い、得られた情報をどのようにインシデント管理に活用出来るのかを考えてみましょう。
+
+# Next Action
+お疲れさまでした！次の演習に移って下さい。
 
 
 
