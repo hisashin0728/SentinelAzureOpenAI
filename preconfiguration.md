@@ -26,3 +26,6 @@ Azure OpenAI で用いるモデルを登録します。
 - 本演習では、最も良い結果が得られる Davinci を選定して下さい。
   -   ``text-davinci-003``
   -   ``gpt35-turbo``
+
+# Next Action
+モデルデプロイが完了しましたら、[演習 1](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work1.md) に移って下さい。
