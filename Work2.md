@@ -49,3 +49,7 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
   - Azure OpenAI に対して、どのような prompt を送りましたか？
   - Sentinel インシデント更新はどのように行われましたか？
   - Azure OpenAI に対して、パラメータ設定はありましたか？
+
+# 6. Next Action
+お疲れさまでした！[次の演習](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work3.md)に移って下さい。 
+
