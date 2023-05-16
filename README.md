@@ -19,7 +19,7 @@ Microsoft Sentinel のインシデント作成をトリガーに Azure OpenAI GP
 - [事前準備 Azure OpenAI サービスの作成](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/preconfiguration.md)
 - [演習1. Azure OpenAI ロジックアプリを用いて、メールによる応答を実践する](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work1.md)
 - [演習2. Microsoft Sentinel のインシデントトリガーを用いて、ロジックアプリを用いて Azure OpenAI に分析ルールの翻訳を実行させる](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)
-- 振り返り Azure OpenAI に対するリクエストチューニング
+- [振り返り Azure OpenAI の prompt 活用を考える](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work3.md)
 - 演習3. Microsoft Sentinel のインシデント情報から Azure OpenAI への問い合わせをカスタマイズする
 
 # 免責事項
