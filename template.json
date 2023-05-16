@@ -139,9 +139,7 @@
                                         "choices": {
                                             "items": {
                                                 "properties": {
-                                                    "finish_reason": {
-                                                        "type": "string"
-                                                    },
+                                                    "finish_reason": {},
                                                     "index": {
                                                         "type": "integer"
                                                     },
