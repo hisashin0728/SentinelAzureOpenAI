@@ -16,6 +16,11 @@ https://www.youtube.com/watch?v=tFgqdHKsOME
 
 <img width="798" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/3a47d0fb-5124-4c3d-a4cf-e2194c30db33">
 
+# 何をやっているのか
+このワークショップでは、ロジックアプリを用いて Azure OpenAI の GPT/ChatGPT に対して prompt による会話を行いました。
+AI を活用するに際して、期待する答えをどのように導き出すか、prompt の依頼方法が重要となります。
+<img width="739" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/dbfb73c3-ac92-44c8-b52a-42ec9bf4a9d9">
+
 # Azure OpenAI の使い方
 Azure OpenAI のプレイグラウンドを用いて、幾つかのモデル活用パターンを考えてみましょう。
 https://oai.azure.com/portal/playground
