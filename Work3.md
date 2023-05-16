@@ -135,7 +135,7 @@ Microsoft Sentinel のオートメーション機能では、インシデント�
 - インシデント情報を元に、ChatGPT に問い合わせを行い、得られた情報をどのようにインシデント管理に活用出来ますか？
 
 # Next Action
-お疲れさまでした！次の演習に移って下さい。
+お疲れさまでした！[最後の演習](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work4.md)に移って下さい。
 
 
 
