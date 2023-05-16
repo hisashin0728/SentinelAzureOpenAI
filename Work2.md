@@ -14,7 +14,7 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 <img width="1080" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/20d3dc5b-09ff-4106-a049-fcd3bde4f364">
 
 # 2. テンプレートの導入
-以下から、ARM テンプレートをデプロイして下さい。<BR>
+以下から、ARM テンプレートをデプロイして下さい。<p>
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2Ftemplate.json)
 
 # 3. 設定
