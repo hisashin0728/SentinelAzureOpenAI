@@ -54,15 +54,21 @@ API 接続の編集から、「承認する」を押してメール受信する�
 <img width="525" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/42c05c55-e8b3-48c6-a996-29ba8b6e9c25">
 
 # 4. テスト
+> テストしてみましょう！
+
 設定したメールアドレス対して Title:「OpenAI question」でテストしてみましょう。<BR>
 数分後、Azure OpenAI で返した内容が返ってきましたか？
   - **日本語でメールを送る場合は HTML メールではなく、TEXT メールで送るようにして下さい**
 <img width="299" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/5e1fdd8b-7095-4228-9775-b8a1ba4b3326">
 
 # 5. 確認ポイント
+> 確認してみましょう！
+
   - ロジックアプリから Azure OpenAI へはどのような RESTAPI での通信が行われたでしょうか？
   - ロジックアプリから Azure OpenAI にチャットする内容はどのような内容で問い合わせが行われましたか？
   - Azure OpenAI に対して、パラメータ設定はありましたか？
 
 # 6. Next Action
-  お疲れさまでした！[次の演習](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)に進んでください。
+> お疲れさまでした！
+
+[次の演習 Microsoft Sentinel のインシデントから Azure OpenAI に問い合わせをかける](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md)に進んでください。
