@@ -9,7 +9,7 @@
 - Azure OpenAI の API キーを格納する場所として、Azure KeyVault を活用ください。
 - 本ワークショップでは簡素化するため、ロジックアプリ内のコード上に埋め込んでいますが、実装レベルにおいては Azure KeyVault のシークレット情報として格納することを推奨します。
 
-## Q. このような Azure OpenAI を活用した Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
+## Q. このような Azure OpenAI を活用した Microsoft Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
 - Azure OpenAI の[価格表](https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/#pricing)を参考として下さい。
   - 利用するモデル、prompt の量によって課金がかかります。
   - 2023.5 現在、```Text-Davinci``` モデルを用いた場合は $0.02 / 1,000 トークンになります。($0.1 / 5,000 トークン)
