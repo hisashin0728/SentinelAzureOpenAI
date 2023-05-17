@@ -1,8 +1,12 @@
 # 1. 振り返り
+> これまでの演習で実践できたこと
+
 演習を通じて、ロジックアプリを通じて Azure OpenAI の GPT/ChatGPT に問い合わせを行えることが理解できましたでしょうか？
 あらためて、Azure OpenAI について振り返ってみましょう。
 
 # 2. Azure OpenAI のモデル
+> Azure OpenAI で定義したモデルを理解する
+
 モデルデプロイで設定した Azure OpenAI のモデルは様々なモデルが提供されていますが、2023.5 現在 Azure OpenAI のモデルと用途は以下のような違いがあります。
 
 |  GPT model  | 概要 |
@@ -17,11 +21,15 @@ https://www.youtube.com/watch?v=tFgqdHKsOME
 <img width="798" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/3a47d0fb-5124-4c3d-a4cf-e2194c30db33">
 
 # 3. 何をやっているのか
+> 演習で何が出来たのか理解できましたでしょうか？
+
 このワークショップでは、ロジックアプリを用いて Azure OpenAI の GPT/ChatGPT に対して prompt による会話を行いました。
 AI を活用するに際して、期待する答えをどのように導き出すか、prompt の依頼方法が重要となります。<BR>
 <img width="739" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/dbfb73c3-ac92-44c8-b52a-42ec9bf4a9d9">
 
 # 4. Azure OpenAI の使い方
+> Azure OpenAI の prompt を用いた活用例を考える
+
 Azure OpenAI のプレイグラウンドを用いて、幾つかのモデル活用パターンを考えてみましょう。<BR>
 https://oai.azure.com/portal/playground
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/28fd2466-be5d-4b14-94f3-c31a8c348dfa)
@@ -103,6 +111,8 @@ GPT に対してコンテキストを要約依頼する例です。
 - [ChatGPT APIの各種パラメーターを指定して動作確認してみた。](https://qiita.com/kuromame1020611/items/0233be428a92d2d4e762)
 
 # 5. Microsoft Sentinel インシデント情報から何が得られるのか？
+> Microsoft Sentinel のインシデントから何が得られて、何を OpenAI に問い合わせるのか
+
 セキュリティオペレーションセンターでは、インシデント運用を効率化するためにインシデント情報から AI を活用することを考えています。
 Microsoft Sentinel からはどのような情報を Azure OpenAI に渡せるのか考えてみましょう。
 
@@ -117,6 +127,8 @@ Microsoft Sentinel からはどのような情報を Azure OpenAI に渡せる�
 <img width="297" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a12e03c8-123b-405b-90ee-8bb3378e5656">
 
 # 6. Microsoft Sentinel に対して、どのような対処が出来るのかを考える
+> Microsoft Sentinel のインシデントを操作する
+
 Microsoft Sentinel のオートメーション機能では、インシデント内容の更新を行うことで内容を上書きすることが出来るようになっています。
 本演習ではインシデント情報を以下のように更新することを実践しました。
 - タグに正規化された ``model`` 情報を付与
@@ -131,6 +143,8 @@ Microsoft Sentinel のオートメーション機能では、インシデント�
 - [インシデントにコメントを追加する](https://learn.microsoft.com/ja-jp/azure/sentinel/investigate-incidents#considerations-for-comments)
 
 # 6. ユースケースを考える
+> Microsoft Sentinel の Azure OpenAI 活用ストーリーを考えてみましょう
+
 - 各自アイデアを考えてみましょう。
 - インシデント情報を元に、ChatGPT に問い合わせを行い、得られた情報をどのようにインシデント管理に活用出来ますか？
 
