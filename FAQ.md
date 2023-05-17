@@ -33,3 +33,4 @@ https://learn.microsoft.com/ja-jp/legal/cognitive-services/openai/data-privacy?c
 
 ## Q. 画像モデルを用いた実践はありませんか？
 - ```Dall-E``` モデルの活用は今後検討予定です。
+- ニーズがあればワークショップを検討しますので、活用シナリオなどを添えて Issues に記録頂ければ幸いです。
