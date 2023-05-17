@@ -50,15 +50,21 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 <img width="372" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/8fee8add-b8c7-4fc2-9943-9389c4d30b38">
 
 # 4. テスト
+> テストしてみましょう！
+
 設定が完了しましたら、Microsoft Sentinel に対してアラートを発砲してみましょう。
 - [Microsoft Defender for Cloud のサンプルアラート ( Defender for Cloud のコネクターを事前に設定）](https://learn.microsoft.com/ja-jp/azure/defender-for-cloud/alert-validation#generate-sample-security-alerts)
 
 # 5. 確認ポイント
+> 確認してみましょう！
+
   - Sentinel 分析ルールの翻訳は、どのように行われましたか？
   - Azure OpenAI に対して、どのような prompt を送りましたか？
   - Sentinel インシデント更新はどのように行われましたか？
   - Azure OpenAI に対して、パラメータ設定はありましたか？
 
 # 6. Next Action
-お疲れさまでした！[次の演習](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work3.md)に移って下さい。 
+> お疲れさまでした！
+
+次の[振り返り](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work3.md)に移って下さい。 
 
