@@ -1,5 +1,5 @@
 # はじめに
-Microsoft Sentinel / Azure Open AI 演習のレポジトリです。
+> Microsoft Sentinel / Azure Open AI 演習のレポジトリです。
 Microsoft Sentinel のインシデント作成をトリガーに Azure OpenAI GPT/ChatGPT を用いた活用を体験いただくレポジトリになります。
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/96135a01-3aff-471a-8a37-0c373fd50db4)
 
