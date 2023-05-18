@@ -13,6 +13,7 @@
 
 ## Q. たまにロジックアプリから Azure OpenAI に対してリクエストが失敗します。
 - モデルで許可されている Prompt の最大リクエストサイズに引っ掛かっている可能性があります。prompt で依頼する内容を調整して量を減らすなどの工夫をしてみて下さい。
+- 各モデルで許可されている最大リクエストトークン量は[公式サイト](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#model-summary-table-and-region-availability)をご参照下さい。
 
 ```
 {
