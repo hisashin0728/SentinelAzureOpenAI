@@ -21,7 +21,7 @@
 
 
 # 1.テンプレートの概要
-以下 ARM テンプレートを用いて、ロジックアプリを導入します。
+> ARM テンプレートを用いて、ロジックアプリを導入します。
 - Office 365 環境のメールアドレスに対して、``OpenAI question`` タイトルでメールを受信すると、リクエストを Azure OpenAI に問い合わせを行い、返信を行います。
 - 本演習より、ロジックアプリを用いた Azure OpenAI への入出力の設定方法を理解することが出来ます。
 <img width="219" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/f4a7ec8e-84b1-4a7f-8bb4-db53ccda6b4b">
