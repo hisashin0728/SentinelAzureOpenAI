@@ -42,6 +42,9 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 
 <img width="434" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/fef324ce-d35f-4338-802f-8fe987bd766f">
 
-## 2.1 デプロイ
+# 3. テンプレートの導入
+以下から、ARM テンプレートをデプロイして下さい。<p>
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2FtemplateEnrichment.json)
+
 
 
