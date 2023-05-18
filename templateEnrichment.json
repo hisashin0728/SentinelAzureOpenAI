@@ -56,13 +56,13 @@
                     },
                     "actions": {
                         "1-Azure-OpenAI-KQL": {
-                            "runAfter": {
-                                "Azure_OpenAI_Key": [
-                                    "Succeeded"
-                                ]
-                            },
+                            "runAfter": {},
                             "type": "Http",
                             "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },
                                 "body": {
                                     "frequency_penalty": 2,
                                     "max_tokens": 3000,
@@ -70,21 +70,20 @@
                                     "temperature": 0
                                 },
                                 "headers": {
-                                    "Content-Type": "application/json",
-                                    "api-key": "@variables('api-key')"
+                                    "Content-Type": "application/json"
                                 },
                                 "method": "POST",
                                 "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
                             }
                         },
                         "2-Azure-OpenAI-Translation": {
-                            "runAfter": {
-                                "Azure_OpenAI_Key": [
-                                    "Succeeded"
-                                ]
-                            },
+                            "runAfter": {},
                             "type": "Http",
                             "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },
                                 "body": {
                                     "frequency_penalty": 2,
                                     "max_tokens": 3000,
@@ -92,21 +91,20 @@
                                     "temperature": 0
                                 },
                                 "headers": {
-                                    "Content-Type": "application/json",
-                                    "api-key": "@variables('api-key')"
+                                    "Content-Type": "application/json"
                                 },
                                 "method": "POST",
                                 "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
                             }
                         },
                         "3-Azure-OpenAI-Summary": {
-                            "runAfter": {
-                                "Azure_OpenAI_Key": [
-                                    "Succeeded"
-                                ]
-                            },
+                            "runAfter": {},
                             "type": "Http",
                             "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },                                
                                 "body": {
                                     "frequency_penalty": 2,
                                     "max_tokens": 3000,
@@ -114,24 +112,10 @@
                                     "temperature": 0
                                 },
                                 "headers": {
-                                    "Content-Type": "application/json",
-                                    "api-key": "@variables('api-key')"
+                                    "Content-Type": "application/json"
                                 },
                                 "method": "POST",
                                 "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
-                            }
-                        },
-                        "Azure_OpenAI_Key": {
-                            "runAfter": {},
-                            "type": "InitializeVariable",
-                            "inputs": {
-                                "variables": [
-                                    {
-                                        "name": "api-key",
-                                        "type": "string",
-                                        "value": "Input Your API Key"
-                                    }
-                                ]
                             }
                         },
                         "For_each": {
