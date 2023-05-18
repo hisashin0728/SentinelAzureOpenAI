@@ -6,8 +6,9 @@
 - 自社本番環境に導入する場合は、API キーの保護や Azure OpenAI の監査ログの有効化、課金監視なども合わせてご検討下さい。
 
 ## Q. ロジックアプリに Azure OpenAI の API キーを埋め込むのはセキュアでは無いので、どうしたら良いでしょうか？
-- Azure OpenAI の API キーを格納する場所として、Azure KeyVault を活用ください。
-- 本ワークショップでは簡素化するため、ロジックアプリ内のコード上に埋め込んでいますが、実装レベルにおいては Azure KeyVault のシークレット情報として格納することを推奨します。
+- よりセキュアなロジックアプリを実装する場合は、以下の二つをご検討下さい。本ワークショップでは簡素化するため、ロジックアプリ内のコード上に埋め込んでいます。
+  - Azure KeyVault にシークレット情報として API-Key を格納して管理する
+  - [マネージド ID を有効にして、ロジックアプリで RESTAPI を叩く際にマネージド ID のトークン情報を Call して接続する](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/managed-identity#assign-yourself-to-the-cognitive-services-user-role)
 
 ## Q. このような Azure OpenAI を活用した Microsoft Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
 - Azure OpenAI の[価格表](https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/#pricing)を参考として下さい。
