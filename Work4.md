@@ -12,7 +12,8 @@ MITRE 戦術 ###[ "LateralMovement", "Execution" ]### について、100 文字�
 ## ユースケース 2 - インシデントタイトルとインシデント補足から、要約をまとめさせる
 インシデント情報を ChatGPT にまとめて送り、インシデント要約をまとめさせるアイデアです。
 ```
-test
+セキュリティインシデントの内容を1000文字以内で概要にまとめてほしい。<BR>
+### @{triggerBody()?['object']?['properties']?['title']}, @{triggerBody()?['object']?['properties']?['description']}, @{triggerBody()?['object']?['properties']?['relatedEntities']}###
 ```
 
 ## ユースケース 3 - ハンティングするための KQL を生成させる
