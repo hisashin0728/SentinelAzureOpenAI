@@ -2,7 +2,7 @@
 > ここからは Microsoft Sentinel のインシデントを更に活用するための Azure OpenAI 活用を考えてみましょう
 本パートでは Microsoft Sentinel の Azure OpenAI の活用ストーリーをカスタマイズで考えてみましょう。
 
-# ユースケースアイデア
+# 1. ユースケースアイデア
 > Microsoft Sentinel のインシデント情報から、セキュリティオペレーターが活用するための様々なアイデア
 
 ## ユースケース 1 - MITRE 戦術の概要を説明してもらう
@@ -31,5 +31,17 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 ###
 ```
 <img width="698" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/b5bd198f-5d6c-41c5-8c22-a47acb566bd3">
+
+# 2. 演習 インシンデント情報を用いて、Azure OpenAI に様々なリクエストをかけてみる
+> 様々なユースケースを用いて、Azure OpenAI にリクエストをかけてみましょう
+インシデント情報から、ロジックアプリを用いて Azure OpenAI の ChatGPT/GPT3 に以下のリクエストをかけるテンプレートを試してみましょう。
+
+- インシデントの要約
+- インシデント補足情報の日本語化
+- インシデント
+
+<img width="434" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/fef324ce-d35f-4338-802f-8fe987bd766f">
+
+## 2.1 デプロイ
 
 
