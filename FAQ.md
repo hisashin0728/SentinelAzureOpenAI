@@ -29,7 +29,7 @@ https://zenn.dev/microsoft/articles/e0419765f7079a
 
 ## Q. Azure OpenAI のデータ、プライバシー、セキュリティはどのようなものか？
 - [公式サイト](https://learn.microsoft.com/ja-jp/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext)をご確認下さい。
-https://learn.microsoft.com/ja-jp/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext
+  - https://learn.microsoft.com/ja-jp/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext
 
 ## Q. IP アドレスや URL を ChatGPT に聞くことで、脅威インテリジェンス情報の置き換えになりますか？
 - ChatGPT/GPT では脅威インテリジェンス情報をデータベースとして有している訳では無いため、prompt で聞いても脅威判定の応答は行われません。
