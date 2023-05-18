@@ -40,45 +40,22 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 - インシデント補足情報の日本語化
 - インシデント
 
-# 3. 設定
-これまでの演習と同様に、ロジックアプリの内容を編集して下さい。
-## 3.1 ロジックアプリ - Sentinel レスポンダーロールの付与
-ロジックアプリから Microsoft Sentinel のインシデントを更新させるため、ロジックアプリのマネージド ID に対して、「Sentinel レスポンダー」ロールの付与を行ってください。
-![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/0be09f07-f4de-46b9-89c8-c1710fbda62a)
-  
-## 3.2 ロジックアプリ - API キーの付与
-本ロジックアプリでは Azure OpenAI の API キーを登録する必要があります。
-- Azure OpenAI の API キーを確認
-<img width="837" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/84b99d6d-8f4b-4b55-82e0-54e9272e93c0">
-
-- ロジックアプリ内に Azure OpenAI のキーを設定する
-![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/9382ed31-7de0-4f16-a606-55e65f03bfdf)
-
-## 3.3 ロジックアプリ - RESTAPI の編集
-展開されたロジックアプリの REST API は URL がサンプルになっています。
-自テナントに合わせた設定に更新して下さい。
-![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/91fa2cd9-0b50-4dbc-b87b-ceac609612a1)
-
-|  Parameter  | Sample |
-| ---- | ---- |
-| https://your-resource-name.openai.azure.com | https://(自分のエンドポイント).openai.azure.com |
-| deployment-id | モデル デプロイ名 |
-
-## 3.4 Sentinel - プレイブックに対して「アクセスの許可」を設定する
-展開されたロジックアプリに対して Microsoft Sentinel がアクセスできるように、「設定」よりプレイブックのアクセス許可を与えます。
-![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/4d86732a-8013-4430-93f5-452f154491c4)
-
-## 3.5 Sentinel - オートメーションルールでプレイブックを自動起動させる
-最後に、インシデント発生時にプレイブックが起動するようにオートメーションルールを作成します。
-もし、メール通知などのプレイブックを事前設定されている場合は、通知前に設定することで和訳された内容を通知することが出来るようになります。
-<img width="372" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/8fee8add-b8c7-4fc2-9943-9389c4d30b38">
-
-
-<img width="434" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/fef324ce-d35f-4338-802f-8fe987bd766f">
-
 # 3. テンプレートの導入
 以下から、ARM テンプレートをデプロイして下さい。<p>
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2FtemplateEnrichment.json)
+
+# 3. 設定
+これまでの演習と同様に、[ロジックアプリの内容を編集して下さい。](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md#3-%E8%A8%AD%E5%AE%9A)
+ - API キーの設定
+ - Azure OpenAI RESTAPI URIの編集
+ - ロジックアプリ / マネージド ID の「Sentinel レスポンダー」ロールの付与
+ - Microsoft Sentinel ロジックアプリ実行権限設定
+ - Microsoft Sentinel オートメーションルールの作成
+
+# 4. テスト
+> サンプルアラートを発砲してみましょう。ChatGPT/GPT3 を用いることで、どのような情報が付与されましたか？
+  
+  
 
 
 
