@@ -9,6 +9,7 @@
   <img width="560" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/024802d3-351b-478c-97d8-f6f39f2f0f6e">
 
 # 事前準備
+> JapanEast のリソースグループでテンプレートを利用して下さい
 - 自テナント内でメール受信可能なアカウントを 1 つ作成して下さい。
   - 本ワークショップでは ``openai@[テナント名].onmicrosoft.com`` としています。
 - 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい。
