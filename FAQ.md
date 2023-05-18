@@ -24,6 +24,9 @@
 }
 ```
 
+## Q. たまに Azure OpenAI からのレスポンスの正規化 (Parse JSON) に失敗しています。
+- JSON アレイのレスポンスが一部異なるものが出るケースがあるようです。エラーになった JSON Parse イベントを読み込ませて、フォーマットを更新していただければと思います。
+
 ## Q. このような Azure OpenAI を活用した Microsoft Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
 - Azure OpenAI の[価格表](https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/#pricing)を参考として下さい。
   - 利用するモデル、prompt の量によって課金がかかります。
