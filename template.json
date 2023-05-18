@@ -42,6 +42,10 @@
                         "Microsoft_Sentinel_incident": {
                             "type": "ApiConnectionWebhook",
                             "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },
                                 "body": {
                                     "callback_url": "@{listCallbackUrl()}"
                                 },
