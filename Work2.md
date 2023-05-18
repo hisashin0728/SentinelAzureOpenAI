@@ -22,13 +22,15 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 # 3. 設定
 演習 1 と同様にロジックアプリの内容を編集して下さい。
 ## 3.1 ロジックアプリ - マネージド ID に対するロールの付与
-ロジックアプリから Microsoft Sentinel のインシデントを更新させるため、ロジックアプリのマネージド ID に対して、以下 2 つのロールを付与します。
+ロジックアプリから Microsoft Sentinel のインシデントを更新させるため、ロジックアプリのマネージド ID に対して、以下 2 つのロールを付与します。<BR>
+（演習1とは異なり、マネージド ID による認証でよりセキュアな接続を行います）
 - **Sentinel レスポンダー**
 - **Cognitive Services OpenAI User**
 
-[2023.5.18 Update] Azure OpenAI のリクエストに対しても、マネージド ID 経由で「Cognitive Service OpenAI User」権限で接続が出来るようになりました！
+[2023.5.18 Update] Azure OpenAI のリクエストに対しても、[マネージド ID 経由で「Cognitive Service OpenAI User」権限で接続が出来るようになりました！](https://zenn.dev/microsoft/articles/call-openai-from-logicapps-with-managedid)
 
-![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/0be09f07-f4de-46b9-89c8-c1710fbda62a)
+<img width="826" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/aee56068-05b3-4455-a04c-f1595b5d29e8">
+
   
 ## 3.2 ロジックアプリ - RESTAPI の編集
 展開されたロジックアプリの REST API は URL がサンプルになっています。
