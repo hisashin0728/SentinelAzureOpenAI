@@ -18,7 +18,7 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 <img width="620" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/72c9e870-063e-45b1-9028-2f4f9d952076">
 
 # 1.テンプレートの概要
-以下 ARM テンプレートを用いて、ロジックアプリを導入します。
+> ARM テンプレートを用いて、ロジックアプリを導入します。
 
 - Microsoft Sentinel ではオートメーション機能を用いて、Logic Apps を通じて様々な自動化操作を行う機能を提供しています。 
 - テンプレートを導入することで、インシデント発生時に Azure OpenAI に問い合わせを行い、prompt を用いて分析ルール補足分の翻訳を実行します。
