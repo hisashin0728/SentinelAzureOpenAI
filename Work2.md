@@ -11,9 +11,9 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 
 - 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい
 - 演習 1 と同じリソースグループでも OK です
-  -　以下設定例です。リージョンは東日本を前提として下さい
-    - リソースグループ名 ``rg-Sentinel-AzureOpenAI-Workshop``
-    - リージョン ``Japan East``
+-　以下設定例です。リージョンは東日本を前提として下さい
+  - リソースグループ名 ``rg-Sentinel-AzureOpenAI-Workshop``
+  - リージョン ``Japan East``
   
 <img width="620" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/72c9e870-063e-45b1-9028-2f4f9d952076">
 
