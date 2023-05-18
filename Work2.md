@@ -8,7 +8,7 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/74a2ad6a-a4fc-4cb8-b448-fcd896e3597b)
 
 # 事前準備
-
+> JapanEast のリソースグループでテンプレートを利用して下さい
 - 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい
 - 演習 1 と同じリソースグループでも OK です
 -　以下設定例です。リージョンは東日本を前提として下さい
