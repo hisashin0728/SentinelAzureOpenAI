@@ -27,6 +27,7 @@ Sentinel のインシデントが検知すると、分析ルールの補足 (Des
 本ロジックアプリでは Azure OpenAI の API キーを登録する必要があります。
 - Azure OpenAI の API キーを確認
 <img width="837" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/84b99d6d-8f4b-4b55-82e0-54e9272e93c0">
+
 - ロジックアプリ内に Azure OpenAI のキーを設定する
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/9382ed31-7de0-4f16-a606-55e65f03bfdf)
 
