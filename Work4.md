@@ -41,6 +41,14 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 - インシデント補足情報の日本語化
 - インシデント
 
+# 事前準備
+> これまでと同様に JapanEast のリソースグループでテンプレートを利用して下さい
+- 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい
+- 演習 1 と同じリソースグループでも OK です
+-　以下設定例です。リージョンは東日本を前提として下さい
+- リソースグループ名 ``rg-Sentinel-AzureOpenAI-Workshop``
+- リージョン ``Japan East``
+
 # 3. テンプレートの導入
 以下から、ARM テンプレートをデプロイして下さい。<p>
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2FtemplateEnrichment.json)
