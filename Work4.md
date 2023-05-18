@@ -41,6 +41,8 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 - インシデント補足情報の日本語化
 - インシデント
 
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a84df34e-1649-4c3c-9cd7-77a73543bc8d)
+
 # 事前準備
 > これまでと同様に JapanEast のリソースグループでテンプレートを利用して下さい
 - 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい
