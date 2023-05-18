@@ -7,6 +7,14 @@ Microsoft Sentinel のインシデント発生時に、Azure OpenAI に問い合
 Sentinel のインシデントが検知すると、分析ルールの補足 (Description) を ChatGPT が翻訳するテンプレートになります。
 ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/74a2ad6a-a4fc-4cb8-b448-fcd896e3597b)
 
+# 事前準備
+- 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい（演習 1 と同様でも OK です）
+  -　以下設定例です。リージョンは東日本を前提として下さい
+    - リソースグループ名 ``rg-Sentinel-AzureOpenAI-Workshop``
+    - リージョン ``Japan East``
+  
+<img width="620" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/72c9e870-063e-45b1-9028-2f4f9d952076">
+
 # 1.テンプレートの概要
 以下 ARM テンプレートを用いて、ロジックアプリを導入します。
 
