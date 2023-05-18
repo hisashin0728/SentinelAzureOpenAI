@@ -9,6 +9,7 @@
 - よりセキュアなロジックアプリを実装する場合は、以下の二つをご検討下さい。本ワークショップでは簡素化するため、ロジックアプリ内のコード上に埋め込んでいます。
   - Azure KeyVault にシークレット情報として API-Key を格納して管理する
   - [マネージド ID を有効にして、ロジックアプリで RESTAPI を叩く際にマネージド ID のトークン情報を Call して接続する](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/managed-identity#assign-yourself-to-the-cognitive-services-user-role)
+   - 2023.5 現在、Azure OpenAI 宛てのロジックアプリ接続コネクタが無いため、RESTAPI で接続する際にマネージド ID のトークンを拾うなどの諸設定、チューニングが必要になります（ちょっと面倒？）
 
 ## Q. このような Azure OpenAI を活用した Microsoft Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
 - Azure OpenAI の[価格表](https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/#pricing)を参考として下さい。
