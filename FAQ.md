@@ -11,6 +11,20 @@
   - [マネージド ID を有効にして、ロジックアプリで RESTAPI を叩く際にマネージド ID のトークン情報を Call して接続する](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/managed-identity#assign-yourself-to-the-cognitive-services-user-role)
    - 2023.5 現在、Azure OpenAI 宛てのロジックアプリ接続コネクタが無いため、RESTAPI で接続する際にマネージド ID のトークンを拾うなどの諸設定、チューニングが必要になります（ちょっと面倒？）
 
+## Q. たまにロジックアプリから Azure OpenAI に対してリクエストが失敗します。
+― Prompt の最大リクエストサイズに引っ掛かっている可能性があります。prompt で依頼する内容を調整して量を減らすなどの工夫をしてみて下さい。
+
+```
+{
+  "error": {
+    "message": "This model's maximum context length is 4097 tokens, however you requested 4158 tokens (1158 in your prompt; 3000 for the completion). Please reduce your prompt; or completion length.",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+```
+
 ## Q. このような Azure OpenAI を活用した Microsoft Sentinel 活用を実施する場合、費用はどれぐらいかかりますか？
 - Azure OpenAI の[価格表](https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/#pricing)を参考として下さい。
   - 利用するモデル、prompt の量によって課金がかかります。
