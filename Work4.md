@@ -55,14 +55,14 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 # 4. テスト
 > サンプルアラートを発砲してみましょう。ChatGPT/GPT3 を用いることで、どのような情報が付与されましたか？
 
-テンプレートによって変わったこと
- - ルール説明の自動和訳
+テンプレートによって実現できたこと
+ - **ルール説明の自動和訳**
   - ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a47781f4-9cc0-45d3-b531-26211e89b6d5)
- - タグ情報の追加
+ - **タグ情報の追加**
   - ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/7ffc7844-2471-47ff-9572-a0e1a82dd5ce)
- - インシデントのサマリー要約
+ - **インシデントのサマリー要約**
   - ![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/f15064d4-847f-4940-ae90-29274f96773c)
- - インシデントタスクに KQL の提案
+ - **インシデントタスクに KQL の提案**
   - <img width="316" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/c44c5510-4f77-49fe-9331-6e6abb0e6095">
 
 # 5. 他にどのようなアイデアがありますか？
