@@ -1,6 +1,7 @@
 # 応用編
 > ここからは Microsoft Sentinel のインシデントを更に活用するための Azure OpenAI 活用を考えてみましょう
-本パートでは Microsoft Sentinel の Azure OpenAI の活用ストーリーをカスタマイズで考えてみましょう。
+
+本パートでは Microsoft Sentinel の Azure OpenAI の更なる活用ストーリーを実践してみるパートになります。
 
 # 1. ユースケースアイデア
 > Microsoft Sentinel のインシデント情報から、セキュリティオペレーターが活用するための様々なアイデア
