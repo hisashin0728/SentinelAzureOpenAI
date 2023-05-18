@@ -48,7 +48,7 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 # 3. 設定
 これまでの演習と同様に、[ロジックアプリの内容を編集して下さい。](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md#3-%E8%A8%AD%E5%AE%9A)
  - Azure OpenAI RESTAPI URIの編集
- - ロジックアプリ / マネージド ID の「Sentinel レスポンダー」「Cognitive Services OpenAI User」ロールの付与
+ - ロジックアプリ / マネージド ID の「**Sentinel レスポンダー**」、「**Cognitive Services OpenAI User**」ロールの付与
  - Microsoft Sentinel ロジックアプリ実行権限設定
  - Microsoft Sentinel オートメーションルールの作成
 
