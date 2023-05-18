@@ -11,6 +11,13 @@
 # 事前準備
 - 自テナント内でメール受信可能なアカウントを 1 つ作成して下さい。
   - 本ワークショップでは ``openai@[テナント名].onmicrosoft.com`` としています。
+- 本演習で作成するリソース（例：ロジックアプリなど）のためのリソースグループを作成して下さい。
+  -　以下設定例です。リージョンは東日本を前提として下さい
+    - リソースグループ名 ``rg-Sentinel-AzureOpenAI-Workshop``
+    - リージョン ``Japan East``
+  
+<img width="620" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/72c9e870-063e-45b1-9028-2f4f9d952076">
+
 
 # 1.テンプレートの概要
 以下 ARM テンプレートを用いて、ロジックアプリを導入します。
