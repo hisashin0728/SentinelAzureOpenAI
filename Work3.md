@@ -130,7 +130,9 @@ Chat GPT (gpt-3.5-turbo/GPT4) 以降からは、**Chat Completion API** を用�
   デフォルトでは、必要なレジストリキーの設定と、1時間以内にプロセスを呼び出すことを検出します。必要に応じて調整できます。
 ```
 
-<p>
+なお、API request の設定では ``prompt`` の代わりに ``messages`` を用います。
+![image](https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a2c181ef-5ece-4b3c-9599-73d1bbc59228)
+
 
 # 6. パラメータチューニング
 > Azure OpenAI でリクエストするパラメータを理解しましょう
