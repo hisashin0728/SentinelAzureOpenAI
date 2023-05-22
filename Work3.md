@@ -93,6 +93,7 @@ GPT に対してコンテキストを要約依頼する例です。
 
   
 # 5. ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
+> ChatGPT3.5/GPT4 を用いる場合は、rule を設定しましょう
 Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来るようになりました。
 期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
 
@@ -129,6 +130,7 @@ Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクト�
 <p>
 
 # 6. パラメータチューニング
+> Azure OpenAI でリクエストするパラメータを理解しましょう
 今回の演習では、RESTAPI で Azure OpenAI に問い合わせを行う際に幾つかのパラメータを適用しました。
 これらのパラメータにはどのような意味が有るのか考えてみましょう。<BR>
 <img width="267" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/44ca05af-221a-4cd2-b5e7-133aa735ce0b">
