@@ -91,7 +91,17 @@ GPT に対してコンテキストを要約依頼する例です。
 
 他にも、prompt の活用例は様々な手法が紹介されています。ご興味がある方は、公式サイト[プロンプト エンジニアリングの手法](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions)を参照下さい。
 
-# 5. パラメータチューニング
+  
+# 5. ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
+Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来るようになりました。
+期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
+
+```json
+[{"role":"system","content":"あなたはセキュリティアナリストです。"},{"role":"user","content":"文章を日本語>で800文字以内で解説して下さい。"},{"role":"assistant","content":"This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."]
+```
+
+  
+# 6. パラメータチューニング
 今回の演習では、RESTAPI で Azure OpenAI に問い合わせを行う際に幾つかのパラメータを適用しました。
 これらのパラメータにはどのような意味が有るのか考えてみましょう。<BR>
 <img width="267" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/44ca05af-221a-4cd2-b5e7-133aa735ce0b">
@@ -113,17 +123,8 @@ GPT に対してコンテキストを要約依頼する例です。
 - [ChatGPT APIの各種パラメーターを指定して動作確認してみた。](https://qiita.com/kuromame1020611/items/0233be428a92d2d4e762)
 - [ChatGPTで用いられるGPT-3.5系のモデルをAPIから利用してみた](https://qiita.com/kaz2ngt/items/d26dd572bd82fcd3dfd3)
 
-# 5. ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
-Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来るようになりました。
-期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
 
-```json
-["role":"system","content":"あなたはセキュリティアナリストです。"},{"role":"user","content":"文章を日本語>で800文字以内で解説して下さい。"},{"role":"assistant","content":"This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."]
-```
-
-
-
-# 6. Microsoft Sentinel インシデント情報から何が得られるのか？
+# 7. Microsoft Sentinel インシデント情報から何が得られるのか？
 > Microsoft Sentinel のインシデントから何が得られて、何を OpenAI に問い合わせるのか
 
 セキュリティオペレーションセンターでは、インシデント運用を効率化するためにインシデント情報から AI を活用することを考えています。
@@ -139,7 +140,7 @@ Microsoft Sentinel からはどのような情報を Azure OpenAI に渡せる�
 
 <img width="297" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/a12e03c8-123b-405b-90ee-8bb3378e5656">
 
-# 6. Microsoft Sentinel に対して、どのような対処が出来るのかを考える
+# 8. Microsoft Sentinel に対して、どのような対処が出来るのかを考える
 > Microsoft Sentinel のインシデントを操作する
 
 Microsoft Sentinel のオートメーション機能では、インシデント内容の更新を行うことで内容を上書きすることが出来るようになっています。
@@ -155,7 +156,7 @@ Microsoft Sentinel のオートメーション機能では、インシデント�
 - [インシデントにタスクを追加する](https://learn.microsoft.com/ja-jp/azure/sentinel/incident-tasks)
 - [インシデントにコメントを追加する](https://learn.microsoft.com/ja-jp/azure/sentinel/investigate-incidents#considerations-for-comments)
 
-# 6. ユースケースを考える
+# 9. ユースケースを考える
 > Microsoft Sentinel の Azure OpenAI 活用ストーリーを考えてみましょう
 
 - 各自アイデアを考えてみましょう。
