@@ -90,8 +90,10 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 - 質問事項などを [FAQ](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/FAQ.md) にまとめています。合わせてご参照下さい。
 - ご意見などございましたら、[Discussion](https://github.com/hisashin0728/SentinelAzureOpenAI/discussions) にてご連絡下さい。
 
-# 7. アンケートにご記入下さい。
+# 7. [アンケート](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRz9kK29SrCBLqv7mxsgrvl9UQVdETVBLTjNaQ1RJVVBPV1RWSDNSSzgxWC4u)にご記入下さい。
 > 作成者のモチベーションになります
+
+- [アンケートURL](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRz9kK29SrCBLqv7mxsgrvl9UQVdETVBLTjNaQ1RJVVBPV1RWSDNSSzgxWC4u)
 
   
   
