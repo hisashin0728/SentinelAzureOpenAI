@@ -102,15 +102,28 @@ GPT に対してコンテキストを要約依頼する例です。
 | ---- | ---- |
 | prompt | 文字列、文字列の一覧、またはトークン リストの一覧としてエンコードされた、入力候補の生成対象となるプロンプト。 <\|endoftext\|> はトレーニング中にモデルが確認するドキュメント区切り記号であるため、プロンプトを指定しない場合、モデルは新しいドキュメントの先頭からのように生成します。 |
 | max_tokens | 入力候補に生成するトークンの最大数。|
-| temperature | 使用するサンプリング温度 (0 から 2)。 値が大きいほど、モデルはより多くのリスクを負います。 よりクリエイティブなアプリケーションの場合は 0.9、明確に定義された回答の場合は 0 (argmax sampling) をお試しください。|
-| frequency_penalty | -2.0 から 2.0 の数値。 値を正にすると、これまでのテキストに存在する頻度に基づいて新しいトークンにペナルティが課せられ、モデルが同じ行を逐語的に繰り返す可能性が低下します。|
+| temperature | **ランダム性の制御[0-1]**<BR>使用するサンプリング温度 (0 から 2)。 値が大きいほど、モデルはより多くのリスクを負います。 よりクリエイティブなアプリケーションの場合は 0.9、明確に定義された回答の場合は 0 (argmax sampling) をお試しください。|
+| frequency_penalty | **周波数制御[0-2]**：高いと同じ話題を繰り返さなくなる<BR>-2.0 から 2.0 の数値。 値を正にすると、これまでのテキストに存在する頻度に基づいて新しいトークンにペナルティが課せられ、モデルが同じ行を逐語的に繰り返す可能性が低下します。
+| top_n | 多様性の制御[0-1] |
+| presence_penalty | **新規トピック制御[0-2]**：高いと新規のトピックが出現しやすくなる |
 
 参考 URL:
 - [OpenAI APIで設定するtemperatureは回答のランダム性を指定するもの。実験してみた](https://note.com/eurekachan/n/n68c1b346809c)
 - [ChatGPT API利用方法の簡単解説](https://qiita.com/mikito/items/b69f38c54b362c20e9e6)
 - [ChatGPT APIの各種パラメーターを指定して動作確認してみた。](https://qiita.com/kuromame1020611/items/0233be428a92d2d4e762)
+- [ChatGPTで用いられるGPT-3.5系のモデルをAPIから利用してみた](https://qiita.com/kaz2ngt/items/d26dd572bd82fcd3dfd3)
 
-# 5. Microsoft Sentinel インシデント情報から何が得られるのか？
+# 5. ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
+Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来るようになりました。
+期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
+
+```json
+["role":"system","content":"あなたはセキュリティアナリストです。"},{"role":"user","content":"文章を日本語>で800文字以内で解説して下さい。"},{"role":"assistant","content":"This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."]
+```
+
+
+
+# 6. Microsoft Sentinel インシデント情報から何が得られるのか？
 > Microsoft Sentinel のインシデントから何が得られて、何を OpenAI に問い合わせるのか
 
 セキュリティオペレーションセンターでは、インシデント運用を効率化するためにインシデント情報から AI を活用することを考えています。
