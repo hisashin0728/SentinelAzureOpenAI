@@ -87,8 +87,11 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 # 6. お疲れさまでした！これにて終了になります。
 > ここまでお疲れさまでした。作成したリソースグループを削除してクリーンナップして下さい。
 
-質問事項などを [FAQ](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/FAQ.md) にまとめています。合わせてご参照下さい。
-ご意見などございましたら、[Discussion](https://github.com/hisashin0728/SentinelAzureOpenAI/discussions) にてご連絡下さい。
+- 質問事項などを [FAQ](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/FAQ.md) にまとめています。合わせてご参照下さい。
+- ご意見などございましたら、[Discussion](https://github.com/hisashin0728/SentinelAzureOpenAI/discussions) にてご連絡下さい。
+
+# 7. アンケートにご記入下さい。
+> 作成者のモチベーションになります
 
   
   
