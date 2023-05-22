@@ -70,7 +70,7 @@
                                     "stop" : null,
                                     "messages" : [
                                         {"role":"system","content":"You are a security analytist."},
-                                        {"role":"user","content":"Give me KQL ideas to hunt the incident on Azure Log Analytics."},
+                                        {"role":"user","content":"Give me KQL ideas to hunt the incident on Azure Log Analytics in 2500 words."},
                                         {"role":"assistant","content":"@{triggerBody()?['object']?['properties']?['description']}"}
                                     ]
                                 },
@@ -78,7 +78,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2022-12-01"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
                             }
                         },
                         "2-Azure-OpenAI-Translation": {
@@ -104,7 +104,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2022-12-01"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
                             }
                         },
                         "3-Azure-OpenAI-Summary": {
@@ -130,7 +130,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2022-12-01"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
                             }
                         },
                         "For_each": {
@@ -141,7 +141,7 @@
                                     "type": "ApiConnection",
                                     "inputs": {
                                         "body": {
-                                            "description": "@items('For_each')?['text']",
+                                            "description": "@items('For_each')?['message']?['content']",
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
                                             "tagsToAdd": {
                                                 "TagsToAdd": [
@@ -177,7 +177,7 @@
                                     "inputs": {
                                         "body": {
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
-                                            "taskDescription": "<p>@{items('For_each_1')?['text']}</p>",
+                                            "taskDescription": "<p>@{items('For_each_1')?['message']?['content']}</p>",
                                             "taskTitle": "Azure OpenAI KQL Suggestion"
                                         },
                                         "host": {
@@ -206,7 +206,7 @@
                                     "inputs": {
                                         "body": {
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
-                                            "message": "<p>@{items('For_each_2')?['text']}</p>"
+                                            "message": "<p>@{items('For_each_2')?['message']?['content']}</p>"
                                         },
                                         "host": {
                                             "connection": {
