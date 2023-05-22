@@ -92,10 +92,10 @@ GPT に対してコンテキストを要約依頼する例です。
 他にも、prompt の活用例は様々な手法が紹介されています。ご興味がある方は、公式サイト[プロンプト エンジニアリングの手法](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions)を参照下さい。
 
   
-# 5. ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
+# 5. Chat Completion API を用いた ChatGPT (gpt-3.5-turbo/GPT4) 以降の role パラメータの設定
 > ChatGPT3.5/GPT4 を用いる場合は、rule を設定しましょう
 
-Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来ます。<BR>
+Chat GPT (gpt-3.5-turbo/GPT4) 以降からは、**Chat Completion API**　を用いてメッセージオブジェクトに role (役割) を設定し、目的に応じたリクエストを設定することが出来ます。<BR>
 - [ChatGPT および GPT-4 モデルの操作方法の説明](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions)
 
 期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
