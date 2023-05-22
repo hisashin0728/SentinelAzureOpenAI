@@ -97,8 +97,27 @@ Chat GPT (gpt-3.5-turbo/GPT4) 以降から、メッセージオブジェクト�
 期待した応答に近づけるように、``system`` / ``assistant`` / ``user`` の各項目に設定値を渡して、リクエストを送ることが出来ます。 
 
 ```json
-[{"role":"system","content":"あなたはセキュリティアナリストです。"},{"role":"user","content":"文章を日本語>で800文字以内で解説して下さい。"},{"role":"assistant","content":"This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."]
+[
+  {
+    "role": "system",
+    "content": "あなたはセキュリティアナリストです。"
+  },
+  {
+    "role": "user",
+    "content": "文章を日本語で800文字以内で解説して下さい。"
+  },
+  {
+    "role": "assistant",
+    "content": "This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."
+  }
+]
 ```
+
+| パラメータ | 意味 |
+| ---- | ---- |
+| system | system メッセージでは、ChatGPTに与える役を設定するために使用します。|
+| assistant | 以前の応答を保存するのに役立ちます。文章要約や翻訳を行う際の対象となるテキストをここのメッセージに設定します。また、望ましい動作の例や回答の選択肢を示す使い方も可能です。|
+| user | ユーザーがChatGPTに提供したいテキストを含めるために使用されます。これにより、ChatGPTはユーザーの要求に応じた回答を提供することができます。|
 
   
 # 6. パラメータチューニング
