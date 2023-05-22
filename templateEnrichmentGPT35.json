@@ -10,7 +10,7 @@
     },
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "SentinelIncidentEnrichmentByAzureOpenAI",
+            "defaultValue": "SentinelIncidentEnrichmentGPT35ByAzureOpenAI",
             "type": "string"
         }
     },
