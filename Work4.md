@@ -37,7 +37,7 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 # 2. 演習 インシンデント情報を用いて、Azure OpenAI に様々なリクエストをかけてみる gpt-3.5-turbo/GPT4 編)
 > 様々なユースケースを用いて、Azure OpenAI にリクエストをかけてみましょう
 
-インシデント情報から、ロジックアプリを用いて Azure OpenAI の ChatGPT/GPT3 に以下のリクエストをかけるテンプレートを試してみましょう。なお、本テンプレートは ChatGPT3.5turbo or GPT4 を想定して、Chat Completion API を用いて作成しています。デプロイするモデルは GPT35-turbo を選定するようにして下さい。
+インシデント情報から、ロジックアプリを用いて Azure OpenAI の ChatGPT/GPT3 に以下のリクエストをかけるテンプレートを試してみましょう。なお、本テンプレートは ChatGPT3.5turbo or GPT4 を想定して、Chat Completion API を用いて作成しています。デプロイするモデルは ``GPT35-turbo`` を選定するようにして下さい。
 - インシデントの要約
 - インシデント補足情報の日本語化
 - インシデント
