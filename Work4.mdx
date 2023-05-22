@@ -33,10 +33,11 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 ```
 <img width="698" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/b5bd198f-5d6c-41c5-8c22-a47acb566bd3">
 
-# 2. 演習 インシンデント情報を用いて、Azure OpenAI に様々なリクエストをかけてみる
+
+# 2. 演習 インシンデント情報を用いて、Azure OpenAI に様々なリクエストをかけてみる gpt-3.5-turbo/GPT4 編)
 > 様々なユースケースを用いて、Azure OpenAI にリクエストをかけてみましょう
 
-インシデント情報から、ロジックアプリを用いて Azure OpenAI の ChatGPT/GPT3 に以下のリクエストをかけるテンプレートを試してみましょう。
+インシデント情報から、ロジックアプリを用いて Azure OpenAI の ChatGPT/GPT3 に以下のリクエストをかけるテンプレートを試してみましょう。なお、本テンプレートは ChatGPT3.5turbo or GPT4 を想定して、Chat Completion API を用いて作成しています。
 - インシデントの要約
 - インシデント補足情報の日本語化
 - インシデント
@@ -53,11 +54,12 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 
 # 3. テンプレートの導入
 以下から、ARM テンプレートをデプロイして下さい。<p>
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2FtemplateEnrichment.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhisashin0728%2FSentinelAzureOpenAI%2Fmain%2FtemplateEnrichmentGPT35.json)
 
 # 3. 設定
 これまでの演習と同様に、[ロジックアプリの内容を編集して下さい。](https://github.com/hisashin0728/SentinelAzureOpenAI/blob/main/Work2.md#3-%E8%A8%AD%E5%AE%9A)
  - Azure OpenAI RESTAPI URIの編集
+  - RESTAPI の URI が変わっていることに注意して下さい。
  - ロジックアプリ / マネージド ID の「**Sentinel レスポンダー**」、「**Cognitive Services OpenAI User**」ロールの付与
  - Microsoft Sentinel ロジックアプリ実行権限設定
  - Microsoft Sentinel オートメーションルールの作成
