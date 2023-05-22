@@ -1,0 +1,445 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "title": "Sentinel Incident Enrichment By AzureOpenAI",
+        "description": "Microsoft Sentinel Incident Enrichment by Azure Open AI",
+        "author": {
+            "name": "Hisashi Nakada"
+        }
+    },
+    "parameters": {
+        "PlaybookName": {
+            "defaultValue": "SentinelIncidentEnrichmentByAzureOpenAI",
+            "type": "string"
+        }
+    },
+    "variables": {
+        "MicrosoftSentinelConnectionName":  "[concat('MicrosoftSentinel-', parameters('PlaybookName'))]",
+        "MicrosoftSentinelConnectionApiId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/Azuresentinel')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('PlaybookName')]",
+            "location": "japaneast",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "Microsoft_Sentinel_incident": {
+                            "type": "ApiConnectionWebhook",
+                            "inputs": {
+                                "body": {
+                                    "callback_url": "@{listCallbackUrl()}"
+                                },
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+                                    }
+                                },
+                                "path": "/incident-creation"
+                            }
+                        }
+                    },
+                    "actions": {
+                        "1-Azure-OpenAI-KQL": {
+                            "runAfter": {},
+                            "type": "Http",
+                            "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },
+                                "body": {
+                                    "frequency_penalty": 2,
+                                    "max_tokens": 3000,
+                                    "prompt": "私はセキュリティアナリストです。インシデント情報を分析するための KQL のアイデアを出してほしい ###@{triggerBody()?['object']?['properties']?['description']}###",
+                                    "temperature": 0
+                                },
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                },
+                                "method": "POST",
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
+                            }
+                        },
+                        "2-Azure-OpenAI-Translation": {
+                            "runAfter": {},
+                            "type": "Http",
+                            "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },
+                                "body": {
+                                    "frequency_penalty": 2,
+                                    "max_tokens": 3000,
+                                    "prompt": "Please translate to Japanese @{triggerBody()?['object']?['properties']?['description']}",
+                                    "temperature": 0
+                                },
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                },
+                                "method": "POST",
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
+                            }
+                        },
+                        "3-Azure-OpenAI-Summary": {
+                            "runAfter": {},
+                            "type": "Http",
+                            "inputs": {
+                                "authentication": {
+                                    "audience": "https://cognitiveservices.azure.com",
+                                    "type": "ManagedServiceIdentity"
+                                },                                
+                                "body": {
+                                    "frequency_penalty": 2,
+                                    "max_tokens": 3000,
+                                    "prompt": "セキュリティインシデントの内容を1000文字以内で概要にまとめてほしい。 ### @{triggerBody()?['object']?['properties']?['title']}, @{triggerBody()?['object']?['properties']?['description']}###",
+                                    "temperature": 0
+                                },
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                },
+                                "method": "POST",
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/completions?api-version=2022-12-01"
+                            }
+                        },
+                        "For_each": {
+                            "foreach": "@body('ParseJSON2')?['choices']",
+                            "actions": {
+                                "UpdateIncident": {
+                                    "runAfter": {},
+                                    "type": "ApiConnection",
+                                    "inputs": {
+                                        "body": {
+                                            "description": "@items('For_each')?['text']",
+                                            "incidentArmId": "@triggerBody()?['object']?['id']",
+                                            "tagsToAdd": {
+                                                "TagsToAdd": [
+                                                    {
+                                                        "Tag": "@body('ParseJSON2')?['model']"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "host": {
+                                            "connection": {
+                                                "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+                                            }
+                                        },
+                                        "method": "put",
+                                        "path": "/Incidents"
+                                    }
+                                }
+                            },
+                            "runAfter": {
+                                "ParseJSON2": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach"
+                        },
+                        "For_each_1": {
+                            "foreach": "@body('ParseJSON1')?['choices']",
+                            "actions": {
+                                "UpdateIncidentTask": {
+                                    "runAfter": {},
+                                    "type": "ApiConnection",
+                                    "inputs": {
+                                        "body": {
+                                            "incidentArmId": "@triggerBody()?['object']?['id']",
+                                            "taskDescription": "<p>@{items('For_each_1')?['text']}</p>",
+                                            "taskTitle": "Azure OpenAI KQL Suggestion"
+                                        },
+                                        "host": {
+                                            "connection": {
+                                                "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+                                            }
+                                        },
+                                        "method": "post",
+                                        "path": "/Incidents/CreateTask"
+                                    }
+                                }
+                            },
+                            "runAfter": {
+                                "ParseJSON1": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach"
+                        },
+                        "For_each_2": {
+                            "foreach": "@body('ParseJSON3')?['choices']",
+                            "actions": {
+                                "UpdateIncidentComment": {
+                                    "runAfter": {},
+                                    "type": "ApiConnection",
+                                    "inputs": {
+                                        "body": {
+                                            "incidentArmId": "@triggerBody()?['object']?['id']",
+                                            "message": "<p>@{items('For_each_2')?['text']}</p>"
+                                        },
+                                        "host": {
+                                            "connection": {
+                                                "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+                                            }
+                                        },
+                                        "method": "post",
+                                        "path": "/Incidents/Comment"
+                                    }
+                                }
+                            },
+                            "runAfter": {
+                                "ParseJSON3": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach"
+                        },
+                        "ParseJSON1": {
+                            "runAfter": {
+                                "1-Azure-OpenAI-KQL": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('1-Azure-OpenAI-KQL')",
+                                "schema": {
+                                    "properties": {
+                                        "choices": {
+                                            "items": {
+                                                "properties": {
+                                                    "finish_reason": {
+                                                        "type": "string"
+                                                    },
+                                                    "index": {
+                                                        "type": "integer"
+                                                    },
+                                                    "logprobs": {},
+                                                    "text": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "text",
+                                                    "index",
+                                                    "finish_reason",
+                                                    "logprobs"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "created": {
+                                            "type": "integer"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "model": {
+                                            "type": "string"
+                                        },
+                                        "object": {
+                                            "type": "string"
+                                        },
+                                        "usage": {
+                                            "properties": {
+                                                "completion_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "prompt_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "total_tokens": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "ParseJSON2": {
+                            "runAfter": {
+                                "2-Azure-OpenAI-Translation": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('2-Azure-OpenAI-Translation')",
+                                "schema": {
+                                    "properties": {
+                                        "choices": {
+                                            "items": {
+                                                "properties": {
+                                                    "finish_reason": {},
+                                                    "index": {
+                                                        "type": "integer"
+                                                    },
+                                                    "logprobs": {},
+                                                    "text": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "text",
+                                                    "index",
+                                                    "finish_reason",
+                                                    "logprobs"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "created": {
+                                            "type": "integer"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "model": {
+                                            "type": "string"
+                                        },
+                                        "object": {
+                                            "type": "string"
+                                        },
+                                        "usage": {
+                                            "properties": {
+                                                "completion_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "prompt_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "total_tokens": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "ParseJSON3": {
+                            "runAfter": {
+                                "3-Azure-OpenAI-Summary": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('3-Azure-OpenAI-Summary')",
+                                "schema": {
+                                    "properties": {
+                                        "choices": {
+                                            "items": {
+                                                "properties": {
+                                                    "finish_reason": {
+                                                        "type": "string"
+                                                    },
+                                                    "index": {
+                                                        "type": "integer"
+                                                    },
+                                                    "logprobs": {},
+                                                    "text": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "text",
+                                                    "index",
+                                                    "finish_reason",
+                                                    "logprobs"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "created": {
+                                            "type": "integer"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "model": {
+                                            "type": "string"
+                                        },
+                                        "object": {
+                                            "type": "string"
+                                        },
+                                        "usage": {
+                                            "properties": {
+                                                "completion_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "prompt_tokens": {
+                                                    "type": "integer"
+                                                },
+                                                "total_tokens": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "azuresentinel": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', variables('MicrosoftSentinelConnectionName'))]",
+                                "connectionName": "[variables('MicrosoftSentinelConnectionName')]",
+                                "connectionProperties": {
+                                    "authentication": {
+                                        "type": "ManagedServiceIdentity"
+                                    }
+                                },
+                                "id": "[variables('MicrosoftSentinelConnectionApiId')]"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "2016-06-01",
+            "name": "[variables('MicrosoftSentinelConnectionName')]",
+            "type": "Microsoft.Web/connections",
+            "location": "[resourceGroup().location]",
+            "kind": "V1",
+            "properties": {
+                "displayName": "[variables('MicrosoftSentinelConnectionName')]",
+                "parameterValueType": "Alternative",
+                "api": {
+                    "id": "[variables('MicrosoftSentinelConnectionApiId')]"
+                }
+            }
+        }        
+    ]
+}
