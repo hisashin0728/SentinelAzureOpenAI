@@ -70,7 +70,7 @@
                                     "stop" : null,
                                     "messages" : [
                                         {"role":"system","content":"You are a security analytist."},
-                                        {"role":"user","content":"I would like you to come up with an idea to hunt in 3000 characters or less using KQL."},
+                                        {"role":"user","content":"I would like you to come up with an query idea to hunt in 3000 characters or less in Japanese using KQL."},
                                         {"role":"assistant","content":"@{triggerBody()?['object']?['properties']?['description']}"}
                                     ]
                                 },
