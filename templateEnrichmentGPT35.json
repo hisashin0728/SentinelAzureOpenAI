@@ -70,7 +70,7 @@
                                     "stop" : null,
                                     "messages" : [
                                         {"role":"system","content":"You are a security analytist."},
-                                        {"role":"user","content":"Give me KQL ideas to hunt the incident on Azure Log Analytics in 2500 words."},
+                                        {"role":"user","content":"I would like you to come up with an idea to hunt in 3000 characters or less using KQL."},
                                         {"role":"assistant","content":"@{triggerBody()?['object']?['properties']?['description']}"}
                                     ]
                                 },
@@ -78,7 +78,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-05-15"
                             }
                         },
                         "2-Azure-OpenAI-Translation": {
@@ -104,7 +104,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-05-15"
                             }
                         },
                         "3-Azure-OpenAI-Summary": {
@@ -130,7 +130,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "POST",
-                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-03-15-preview"
+                                "uri": "https://yourname.openai.azure.com/openai/deployments/yourmodel/chat/completions?api-version=2023-05-15"
                             }
                         },
                         "For_each": {
