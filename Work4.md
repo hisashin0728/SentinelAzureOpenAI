@@ -8,18 +8,59 @@
 
 ## ユースケース 1 - MITRE 戦術の概要を説明してもらう
 分析ルールに含まれる MITRE 戦術について、補足情報としてコメントに付与するなどが考えられます。
+
+- prompt 例
 ```
 MITRE 戦術 ###[ "LateralMovement", "Execution" ]### について、100 文字以内で解説してほしい。
 ```
+
+- Chat Completion API 例
+```
+[
+  {
+    "role": "system",
+    "content": "You are a security analytist."
+  },
+  {
+    "role": "user",
+    "content": "I want you to summarize the content of MITRE tactics in 100 characters or less."
+  },
+  {
+    "role": "assistant",
+    "content":"["LateralMovement", "Execution"]"
+  }
+]
+```
+
 <img width="697" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/6e1ccaba-7d4f-4aec-8219-16e0e29a5416">
 
 ## ユースケース 2 - インシデントタイトルとインシデント補足から、要約をまとめさせる
 インシデント情報を ChatGPT にまとめて送り、インシデント要約をまとめさせるアイデアです。
+
+- prompt 例
 ```
 私はセキュリティアナリストです。
 セキュリティインシデントの内容を1000文字以内で概要にまとめてほしい。
 
 ### [インシデントタイトル], [インシデントの説明], [インシデントのエンティティ] ###
+```
+
+- Chat Completion API 例
+```
+[
+  {
+    "role": "system",
+    "content": "You are a security analytist."
+  },
+  {
+    "role": "user",
+    "content": "I want you to summarize the content of the security incident in 1000 characters or less."
+  },
+  {
+    "role": "assistant",
+    "content": "[インシデントタイトル], [インシデントの説明], [インシデントのエンティティ]"
+  }
+]
 ```
 
 ## ユースケース 3 - ハンティングするための KQL を生成させる
@@ -47,7 +88,7 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
   },
   {
     "role": "assistant",
-    "content": "This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."
+    "content": "[インシデントタイトル], [インシデントの説明], [インシデントのエンティティ]"
   }
 ]
 ```
