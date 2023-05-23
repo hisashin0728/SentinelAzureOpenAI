@@ -24,6 +24,8 @@ MITRE 戦術 ###[ "LateralMovement", "Execution" ]### について、100 文字�
 
 ## ユースケース 3 - ハンティングするための KQL を生成させる
 分析ルール名や補足内容、ChatGPT の一次応答を用いて、インシデントを判定するための KQL を生成させます。
+
+- prompt 例
 ```
 Microsoft Sentinel で脅威を調査するための KQL を提案してほしい
 
@@ -31,6 +33,25 @@ Microsoft Sentinel で脅威を調査するための KQL を提案してほし�
 あなたのAzureストレージアカウント「Sample-Storage」に実行可能ファイルを異常な方法でアップロードした人がいます。 この警告はADLS Gen2トランザクションによって引き起こされました。
 ###
 ```
+
+- Chat Completion API 例
+```
+[
+  {
+    "role": "system",
+    "content": "You are a security analytist."
+  },
+  {
+    "role": "user",
+    "content": "I would like you to come up with a query idea to hunt in 3000 characters in Japanese or less using KQL."
+  },
+  {
+    "role": "assistant",
+    "content": "This detection looks for the steps required to conduct a UAC bypass using Fodhelper.exe. By default this detection looks for the setting of the required registry keys and the invoking of the process within 1 hour - this can be tweaked as required."
+  }
+]
+```
+
 <img width="698" alt="image" src="https://github.com/hisashin0728/SentinelAzureOpenAI/assets/55295601/b5bd198f-5d6c-41c5-8c22-a47acb566bd3">
 
 
